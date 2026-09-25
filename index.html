@@ -1,0 +1,789 @@
+<!doctype html>
+<html lang="en" class="lang-en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Coastal Engineering &amp; Resilience Lab · NTOU</title>
+<meta name="description" content="Prof. Wei-Po Huang's lab at the Department of Harbor and River Engineering, National Taiwan Ocean University: coastal morphodynamics, typhoon waves, coastal risk and adaptation, and AI-based coastal monitoring in Taiwan.">
+<meta property="og:title" content="Coastal Engineering & Resilience Lab · NTOU">
+<meta property="og:description" content="Coastal morphodynamics, typhoon waves, coastal risk and adaptation, and AI-based coastal monitoring along Taiwan's coasts.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0e1f2b">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230e1f2b'/%3E%3Cpath d='M17 30 30 17v13z' fill='%23e9dfc4'/%3E%3Cpath d='M3 16c3-3.5 6-3.5 9 0s6 3.5 9 0' fill='none' stroke='%23ffffff' stroke-width='2.4' stroke-linecap='round'/%3E%3Ccircle cx='24' cy='9' r='3.2' fill='%23e0418f'/%3E%3C/svg%3E">
+<script>
+  /* Pick the language before first paint: saved choice, else browser language. */
+  (function () {
+    var l = null;
+    try { l = localStorage.getItem("lab-lang"); } catch (e) {}
+    if (l !== "en" && l !== "zh") l = /^zh/i.test(navigator.language || "") ? "zh" : "en";
+    var r = document.documentElement;
+    r.classList.remove("lang-en", "lang-zh");
+    r.classList.add("lang-" + l);
+    if (l === "zh") r.setAttribute("lang", "zh-Hant-TW");
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main"><span data-l="en">Skip to content</span><span data-l="zh">跳至主要內容</span></a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Coastal Engineering & Resilience Lab — home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="var(--ink)"/><path d="M17 30 30 17v13z" fill="var(--land)"/><path d="M3 16c3-3.5 6-3.5 9 0s6 3.5 9 0" fill="none" stroke="var(--paper)" stroke-width="2.4" stroke-linecap="round"/><circle cx="24" cy="9" r="3.2" fill="var(--mag)"/></svg>
+      <span class="brand-text">
+        <span class="brand-name"><span data-l="en">Coastal Engineering &amp; Resilience Lab</span><span data-l="zh">海岸工程與防災研究室</span></span>
+        <span class="brand-sub">NTOU · HRE · Prof. Wei-Po Huang</span>
+      </span>
+    </a>
+    <nav class="nav" id="site-nav" aria-label="Sections">
+      <a href="#people"><span data-l="en">Professor</span><span data-l="zh">教授介紹</span></a>
+      <a href="#research"><span data-l="en">Research</span><span data-l="zh">研究主題</span></a>
+      <a href="#projects"><span data-l="en">Projects</span><span data-l="zh">研究計畫</span></a>
+      <a href="#publications"><span data-l="en">Publications</span><span data-l="zh">論文發表</span></a>
+      <a href="#facilities"><span data-l="en">Facilities</span><span data-l="zh">研究設施</span></a>
+      <a href="#join"><span data-l="en">Join</span><span data-l="zh">加入我們</span></a>
+      <a href="#contact"><span data-l="en">Contact</span><span data-l="zh">聯絡</span></a>
+    </nav>
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="zh" aria-pressed="false">中文</button>
+    </div>
+    <button class="menu-btn" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Menu">
+      <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+<!-- ================= HERO: study-site map ================= -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-intro">
+      <p class="eyebrow"><span data-l="en">Dept. of Harbor and River Engineering · National Taiwan Ocean University</span><span data-l="zh">國立臺灣海洋大學 · 河海工程學系</span></p>
+      <h1><span data-l="en">Coastal Engineering &amp; Resilience Lab</span><span data-l="zh">海岸工程與防災研究室</span></h1>
+      <p class="pi"><span data-l="en">Principal Investigator: <strong>Prof. Wei-Po Huang</strong></span><span data-l="zh">主持人：<strong>黃偉柏 教授</strong></span></p>
+      <p class="lead" data-l="en">We study how Taiwan's coasts change and how to protect them. The lab combines field monitoring, numerical modelling of waves and sediment transport, and image-based AI methods to assess coastal erosion and typhoon hazards, and plans protection and adaptation measures with government agencies.</p>
+      <p class="lead" data-l="zh">研究臺灣海岸如何變遷，以及如何防護。研究室結合現場監測、波浪與輸砂數值模擬，以及影像與 AI 分析，評估海岸侵蝕與颱風災害潛勢，並與政府機關共同研擬海岸防護與調適策略。</p>
+      <div class="facts">
+        <div class="fact"><b data-count="sites">11</b><span><span data-l="en">coastal study areas, shown on the map</span><span data-l="zh">個海岸研究場址（見地圖）</span></span></div>
+        <div class="fact"><b data-count="agency">31</b><span><span data-l="en">agency-commissioned projects since 2020</span><span data-l="zh">項政府委託計畫（2020 起）</span></span></div>
+        <div class="fact"><b data-count="nstc">16</b><span><span data-l="en">NSTC research grants since 2012</span><span data-l="zh">項國科會研究計畫（2012 起）</span></span></div>
+      </div>
+    </div>
+
+    <div class="hero-map">
+      <div class="map-card">
+        <svg class="chart" viewBox="0 0 520 700" role="group" aria-labelledby="map-title map-desc">
+        <title id="map-title">Study sites along the coast of Taiwan</title><desc id="map-desc">Map of Taiwan with 11 numbered study sites and the lab in Keelung; Kinmen is shown in an inset.</desc>
+        <rect class="sea" x="0" y="0" width="520" height="700"/>
+        <g class="grat">
+        <path d="M130,695.4L130,4.6"/>
+        <path d="M303.3,695.4L303.3,4.6"/>
+        <path d="M476.7,695.4L476.7,4.6"/>
+        <path d="M0,658L260,656.7L520,658"/>
+        <path d="M0,470.4L260,469L520,470.4"/>
+        <path d="M0,281.4L260,280L520,281.4"/>
+        <path d="M0,90.9L260,89.4L520,90.9"/>
+        </g><g class="grat-lab">
+        <text x="130.0" y="692" text-anchor="middle">120°E</text>
+        <text x="303.3" y="692" text-anchor="middle">121°E</text>
+        <text x="476.7" y="692" text-anchor="middle">122°E</text>
+        <text x="512" y="653.0" text-anchor="end">22°N</text>
+        <text x="512" y="465.4" text-anchor="end">23°N</text>
+        <text x="512" y="276.4" text-anchor="end">24°N</text>
+        <text x="512" y="85.9" text-anchor="end">25°N</text>
+        </g>
+        <path class="land" d="M460.4,100.6L447.9,115.4L446.1,118.6L444.8,123.2L443.6,128L442.9,133.1L443.6,138L445.4,148.3L445.4,150.9L444.2,153.4L444.8,158.9L446.7,162.8L451.1,165.7L456,166.3L456,167.6L454.2,167.3L452.3,167.6L450.4,168.3L449.2,169.2L451.1,172.4L451.7,176.6L451.1,180.5L447.3,182.7L446.7,184.3L447.3,186.3L448.6,187.9L449.2,189.8L447.3,191.4L442.9,193.7L438.6,199.1L438.6,201.1L438.6,205.9L437.9,207.5L437.3,209.1L436.7,211L436.1,215.2L436.1,216.5L435.5,217.5L434.8,218.1L435.5,219.4L436.1,220L436.7,221L437.3,222L437.3,222.6L436.1,224.2L432.3,228.1L428.6,233.5L425.5,236.1L424.2,237.4L424.8,238.7L424.2,239.6L419.9,243.1L418,244.7L416.1,248.6L414.2,256.6L409.9,264L408.6,266.9L408.6,269.8L409.9,273.3L411.1,274.9L411.7,275.5L412.4,276.5L412.4,278.4L411.7,281L409.2,284.8L408.6,287.1L408.6,291.2L406.1,301.8L402.4,313.3L396.8,339.5L393.6,345.9L386.2,388.4L383.7,405.6L381.8,408.8L377.4,415.2L375.5,418.4L374.3,422.5L373.1,429.8L373.1,436.5L372.4,442.9L369.3,449.6L368.1,450.8L364.9,453.1L363.7,454.7L363.1,456.3L361.8,460.1L358.7,465.5L356.8,474.1L355,478.2L348.7,487.7L347.5,489.6L338.7,497.3L336.2,499.8L336.2,501.7L336.2,505.8L336.2,507.7L335.6,509.6L334.4,511.9L331.2,516L328.1,518.8L317.5,526.1L310,533.8L308.2,534.7L306.9,536.6L303.8,545.5L301.9,548.7L296.3,555.3L294.4,559.4L293.2,567.4L290.1,578.4L283.8,589.5L282.6,593.3L281.9,603.8L281.9,613.6L282.6,647.7L281.3,652.4L279.4,656.2L277.6,657.8L275.1,660.3L275.1,666L275.7,672L275.7,675.8L272.6,671.4L268.2,667.9L263.2,665.7L257.6,664.4L257.6,668.5L256.4,670.1L253.9,669.8L251.4,667.6L251.4,666L252,661.6L248.2,655.3L248.2,653.7L248.2,652.4L248.2,650.2L248.2,643.3L248.9,641.1L250.7,638.8L250.7,637L237.6,602.8L236.4,600.9L232.6,596.5L230.2,589.8L228.9,587.9L223.3,583.8L221.4,582.6L220.8,582.2L219.5,581.9L218.9,579.4L218.9,578.4L215.8,576.5L209.6,573.4L206.4,571.5L203.3,568.6L201.4,567.7L199.6,566.7L199,567L197.7,567.4L195.8,567.4L187.7,560.7L179.6,549.3L187.7,559.4L187.1,554.7L185.2,552.1L184.6,549.9L180.9,545.8L174.6,540.4L172.7,537.6L171.5,534.4L172.7,531.5L174,528.7L172.7,524.9L170.9,521.1L167.8,516L164.6,509.3L164,506.5L164,504.6L165.3,502L165.3,500.4L164.6,499.8L164,499.2L163.4,498.2L162.8,496.6L160.9,493.4L160.3,492.2L159,483.3L158.4,479.1L157.1,476.6L154.6,474.1L157.8,471.8L159.6,467.7L159,464.5L154.6,463.9L154,465.2L153.4,467.4L152.2,469L149.7,469L149,467.4L149,462.9L148.4,461.3L145.9,460.1L144.7,461.3L143.4,463.2L141.5,463.9L139.7,462.3L139,459.8L139.7,457.5L140.3,455.9L142.2,455L144.7,454.7L146.5,454L147.2,452.1L146.5,451.2L140.3,449.6L140.3,448.3L145.3,448.3L144.7,446.4L142.2,444.2L140.3,441.9L140.9,439.4L142.2,438.4L144,437.8L145.3,436.2L144.7,433.3L143.4,431.4L144,429.5L145.3,427L146.5,425.4L146.5,423.8L146.5,422.2L149,416.5L149.7,415.2L151.5,414.9L149,413.3L150.3,410.4L152.8,410.4L154.6,409.4L155.9,409.8L155.3,407.5L154,408.5L152.8,408.2L150.9,408.2L150.9,405.9L152.8,402.4L155.3,402.1L158.4,402.1L155.9,395.4L153.4,390L154.6,387.4L154.6,386.2L152.8,385.2L152.8,384.2L154,382.7L154.6,381.1L157.1,377.5L151.5,377.9L151.5,372.1L154.6,368.9L154.6,358.1L154.6,350.1L156.5,343.4L159.6,338.3L160.3,331.9L162.1,326.1L162.8,324.2L167.1,318.8L167.8,316.8L167.8,315.9L171.5,313L172.7,311.1L174,306.3L174.6,304.4L179.6,299.9L180.9,298L182.7,292.8L185.2,287.7L189,277.1L190.8,274.3L192.7,272L194.6,271L195.8,270.4L197.1,269.4L197.1,267.5L197.7,265.6L201.4,263L202.1,261.1L202.7,254.4L203.3,252.4L205.2,250.8L212.7,242.2L212.7,241.5L213.3,239.3L215.2,237.7L217,233.2L218.9,225.2L225.2,214.6L227,208.1L228.9,204.3L237.6,194.6L242.6,189.5L243.9,186.6L244.5,182.4L245.8,178.6L249.5,171.8L250.7,167.6L252,166L256.4,164.7L257.6,163.1L258.2,161.5L258.9,159.9L262,157L265.1,154.7L268.8,153.8L273.2,154.7L272.6,150.9L274.5,148.6L277,146L278.2,142.2L278.8,141.2L281.3,139.9L281.9,136.4L285.7,129L286.9,127L287.6,125.7L287.6,124.8L286.9,123.5L286.3,122.2L287.6,120.3L288.8,119L289.4,117.3L290.1,114.8L290.7,112.8L291.9,110.9L293.8,109.6L295,109L295,108.3L295.7,106.4L296.9,102.2L298.2,100.2L304.4,90.9L308.8,85.4L313.8,81.2L325.6,77.3L328.7,75.4L331.2,73.4L333.7,71.8L340,69.6L353.1,67.3L360.6,66L363.7,64.7L368.1,61.2L368.7,60.5L370.6,60.5L372.4,60.5L374.9,61.2L376.2,62.8L376.8,64.7L378,65.7L379.9,64.7L378,61.2L373.7,57.3L371.8,56L372.4,54L373.7,53.1L374.9,52.4L375.5,51.8L376.8,48.5L378.7,44.7L383,40.8L389.9,37.5L396.8,35.9L404.3,36.6L406.7,38.8L413.6,48.2L416.1,53.1L416.7,52.7L418.6,52.4L420.5,52.1L421.7,52.4L421.7,53.1L421.1,54L420.5,55L420.5,56.6L421.1,57.3L423.6,59.2L424.2,59.9L425.5,60.8L428,61.8L457.9,69.2L460.4,70.5L459.2,72.8L459.2,74.7L459.2,78.3L461,84.1L462.9,86.7L464.2,87.3L468.5,86.7L471,86.7L473.5,87.7L476,88.9L477.9,90.6L464.2,97.3ZM401.1,649.6L404.3,652.1L405.5,653.7L405.5,655.3L401.8,656.5L396.8,654.6L392.4,651.5L389.9,649L390.5,647.4L390.5,645.5L389.9,643.9L388.7,642.6L401.8,642.6L401.8,643.9L401.1,644.5L400.5,646.1L400.5,648ZM69.2,356.5L72.3,362.2L72.9,364.8L72.3,366.7L71,365.4L69.8,364.5L67.9,364.1L65.4,365.4L63.5,365.7L62.3,366.4L61.7,367.3L61,369.9L60.4,370.5L57.3,372.4L54.2,372.8L51.1,371.8L47.9,368.6L48.6,366.7L50.4,368.9L53.6,369.6L56.1,368.6L58.6,366.7L56.7,366.4L55.4,365.4L54.8,364.5L53.6,362.9L52.9,363.5L52.9,363.8L52.3,364.1L52.3,361.6L52.3,359L53.6,359L54.8,359.4L59.8,356.2L62.9,355.2L62.3,358.1L61.7,359L64.2,358.1L66.7,358.4L67.9,358.4ZM39.2,356.5L41.7,349.8L43.6,347.5L46.1,350.1L44.8,351L43.6,353.3L41.7,359L41.7,360.3L42.3,361.6L41.7,362.5L39.8,362.9L38.6,362.9L37.3,363.2L36.7,363.5L36.1,364.1L33.6,364.1L33.6,362.9L34.8,361.9L36.1,361.6L37.3,361.6L39.2,360.9L39.2,359.7ZM56.1,352L55.4,349.8L54.2,347.9L51.1,345L54.8,342.1L57.3,343.4L59.2,345L59.8,347.2L58.6,348.5L59.2,351L57.9,352.3L56.7,353ZM383,534.4L382.4,531.9L382.4,531.2L389.3,530.9L389.9,531.2L390.5,532.5L389.9,535L389.3,536.3L389.3,537.2L389.3,538.2L389.3,539.2L388.7,538.8L387.4,538.8L386.8,538.8L386.8,538.5L384.9,537.9ZM134.1,385.2L142.8,376L150.3,367L151.5,366.4L145.9,376.3L142.8,379.1L140.9,381.4L138.4,383.9L136.6,385.2L133.4,387.8L131.6,388.7Z"/>
+        <g class="sea-lab"><text x="118" y="300" transform="rotate(-62 118 300)">TAIWAN STRAIT</text><text x="470" y="430" transform="rotate(90 470 430)">PACIFIC OCEAN</text></g>
+        <g class="scalebar" transform="translate(24 656)"><path d="M0 0 H84.0 M0 -5 V5 M42.0 -3 V3 M84.0 -5 V5"/><text x="0" y="-10">0</text><text x="84.0" y="-10" text-anchor="middle">50 km</text></g>
+        <g class="north" transform="translate(486 34)"><path d="M0 -18 L7 8 L0 3 L-7 8 Z"/><text x="0" y="24" text-anchor="middle">N</text></g>
+        <g class="inset" transform="translate(16 16)"><rect class="inset-frame" x="0" y="0" width="150" height="124"/>
+        <path class="land" d="M89.2,18.2L101.8,15.8L114.4,26.3L122.3,47.4L120.7,62L114.4,69.3L101.8,62L94,59.6L81.4,61.2L68.8,68.5L62.5,78.2L56.2,81.4L49.9,78.2L45.2,78.2L42,76.6L40.5,72.5L40.5,71.7L43.6,66.9L45.2,64.4L45.2,61.2L45.2,57.1L43.6,49.8L42,43.3L40.5,39.3L43.6,38.5L56.2,32L73.5,43.3L84.5,41.7L86.1,27.1Z" transform="translate(0 10)"/>
+        <text class="inset-lab" x="8" y="117">KINMEN · 118.4°E</text></g>
+        <g id="site-markers">
+        <g class="pin pin-lab" data-site="keelung" tabindex="0" role="button" aria-label="1. NTOU, Keelung"><circle class="pin-halo" cx="437.7" cy="62.2" r="17"/><rect class="pin-shape" x="428.7" y="53.2" width="18" height="18" rx="2"/><text x="437.7" y="65.8" text-anchor="middle">1</text></g>
+        <g class="pin" data-site="taipei" tabindex="0" role="button" aria-label="2. Taipei Port"><circle class="pin-halo" cx="368.3" cy="61.2" r="17"/><circle class="pin-shape" cx="368.3" cy="61.2" r="9.5"/><text x="368.3" y="64.8" text-anchor="middle">2</text></g>
+        <g class="pin" data-site="taoyuan" tabindex="0" role="button" aria-label="3. Taoyuan coast"><circle class="pin-halo" cx="317.2" cy="83.2" r="17"/><circle class="pin-shape" cx="317.2" cy="83.2" r="9.5"/><text x="317.2" y="86.8" text-anchor="middle">3</text></g>
+        <g class="pin" data-site="hsinchu" tabindex="0" role="button" aria-label="4. Hsinchu coast"><circle class="pin-halo" cx="288.6" cy="120.5" r="17"/><circle class="pin-shape" cx="288.6" cy="120.5" r="9.5"/><text x="288.6" y="124.1" text-anchor="middle">4</text></g>
+        <g class="pin" data-site="yunlin" tabindex="0" role="button" aria-label="5. Yunlin coast"><circle class="pin-halo" cx="159.5" cy="345.8" r="17"/><circle class="pin-shape" cx="159.5" cy="345.8" r="9.5"/><text x="159.5" y="349.4" text-anchor="middle">5</text></g>
+        <g class="pin" data-site="tainan" tabindex="0" role="button" aria-label="6. Bei-Men coast, Tainan"><circle class="pin-halo" cx="148.2" cy="418.5" r="17"/><circle class="pin-shape" cx="148.2" cy="418.5" r="9.5"/><text x="148.2" y="422.1" text-anchor="middle">6</text></g>
+        <g class="pin" data-site="yilan" tabindex="0" role="button" aria-label="7. Yilan coast and Su-ao Port"><circle class="pin-halo" cx="453.3" cy="169.2" r="17"/><circle class="pin-shape" cx="453.3" cy="169.2" r="9.5"/><text x="453.3" y="172.8" text-anchor="middle">7</text></g>
+        <g class="pin" data-site="hualien" tabindex="0" role="button" aria-label="8. Hualien coast"><circle class="pin-halo" cx="410.8" cy="285.2" r="17"/><circle class="pin-shape" cx="410.8" cy="285.2" r="9.5"/><text x="410.8" y="288.8" text-anchor="middle">8</text></g>
+        <g class="pin" data-site="taitung" tabindex="0" role="button" aria-label="9. Taitung coast"><circle class="pin-halo" cx="331.1" cy="515.5" r="17"/><circle class="pin-shape" cx="331.1" cy="515.5" r="9.5"/><text x="331.1" y="519.1" text-anchor="middle">9</text></g>
+        <g class="pin" data-site="green" tabindex="0" role="button" aria-label="10. Green Island"><circle class="pin-halo" cx="388.3" cy="534.3" r="17"/><circle class="pin-shape" cx="388.3" cy="534.3" r="9.5"/><text x="388.3" y="537.9" text-anchor="middle">10</text></g>
+        <g class="pin" data-site="orchid" tabindex="0" role="button" aria-label="11. Orchid Island"><circle class="pin-halo" cx="398.7" cy="649.6" r="17"/><circle class="pin-shape" cx="398.7" cy="649.6" r="9.5"/><text x="398.7" y="653.2" text-anchor="middle">11</text></g>
+        <g class="pin" data-site="kinmen" tabindex="0" role="button" aria-label="12. Kinmen"><circle class="pin-halo" cx="91" cy="81.2" r="17"/><circle class="pin-shape" cx="91" cy="81.2" r="9.5"/><text x="91" y="84.8" text-anchor="middle">12</text></g>
+        </g></svg>
+        <div class="map-caption">
+          <span><i class="legend-dot"></i><span data-l="en">Study site</span><span data-l="zh">研究場址</span></span>
+          <span><i class="legend-sq"></i><span data-l="en">Lab (NTOU)</span><span data-l="zh">研究室（海大）</span></span>
+          <span><span data-l="en">Coastline: Natural Earth 1:10m · Mercator</span><span data-l="zh">海岸線：Natural Earth 1:10m · 麥卡托投影</span></span>
+        </div>
+      </div>
+      <div class="site-chips" id="site-chips" aria-label="Study sites"></div>
+    </div>
+
+    <div class="hero-panel">
+      <p class="site-hint"><span data-l="en">Select a numbered site on the map to see the work done there.</span><span data-l="zh">點選地圖上的編號，查看該場址的研究內容。</span></p>
+      <div class="site-panel" id="site-panel" tabindex="-1" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PEOPLE ================= -->
+<section class="section" id="people" aria-labelledby="people-title">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow"><span data-l="en">Principal Investigator</span><span data-l="zh">教授介紹</span></p>
+      <h2 id="people-title"><span data-l="en">About Prof. Huang</span><span data-l="zh">關於黃偉柏教授</span></h2>
+    </div>
+    <div class="pi-grid">
+      <div class="pi-card">
+        <img src="portrait.webp" width="960" height="720" alt="Prof. Wei-Po Huang in the Dolomites">
+        <div>
+          <h3><span data-l="en">Wei-Po Huang, Ph.D.</span><span data-l="zh">黃偉柏 教授</span></h3>
+          <p class="role"><span data-l="en">Professor, Department of Harbor and River Engineering, NTOU; Head, Division of River and Coastal Eco-environment</span><span data-l="zh">國立臺灣海洋大學河海工程學系 教授 兼 河海生態環境營造組組長</span></p>
+        </div>
+        <dl class="contact-list">
+          <div><dt>Email</dt><dd><span class="mono">A0301@mail.ntou.edu.tw</span><button class="copy" type="button" data-copy="A0301@mail.ntou.edu.tw"><span data-l="en">Copy</span><span data-l="zh">複製</span></button></dd></div>
+          <div><dt><span data-l="en">Phone</span><span data-l="zh">電話</span></dt><dd class="mono">+886-2-2462-2192 <span data-l="en">ext.</span><span data-l="zh">分機</span> 6154 / 6167</dd></div>
+          <div><dt><span data-l="en">Office</span><span data-l="zh">研究室</span></dt><dd><span data-l="en">Room 209, HRE Building I</span><span data-l="zh">河工一館 209 室</span></dd></div>
+        </dl>
+      </div>
+      <div class="cv">
+        <div class="cv-block full">
+          <h4><span data-l="en">Expertise</span><span data-l="zh">學術專長</span></h4>
+          <ul class="expertise">
+            <li><span data-l="en">Coastal engineering</span><span data-l="zh">海洋工程、海岸工程</span></li>
+            <li><span data-l="en">Coastal morphological change</span><span data-l="zh">海岸地形變遷機制分析評估</span></li>
+            <li><span data-l="en">Typhoon waves &amp; storm surge</span><span data-l="zh">颱風波浪及暴潮分析</span></li>
+            <li><span data-l="en">Extreme sea-state simulation</span><span data-l="zh">極值海象模擬</span></li>
+            <li><span data-l="en">Coastal environment construction &amp; monitoring</span><span data-l="zh">海岸環境營造及監測</span></li>
+            <li><span data-l="en">Marine works &amp; harbor planning and design</span><span data-l="zh">海事工程及港灣工程規劃設計</span></li>
+            <li><span data-l="en">Directional wave spectra</span><span data-l="zh">方向頻譜</span></li>
+            <li><span data-l="en">Offshore wind energy potential</span><span data-l="zh">離岸潛勢風能分析</span></li>
+            <li><span data-l="en">AI for coastal hazard mitigation</span><span data-l="zh">AI 於海岸防災應用</span></li>
+          </ul>
+        </div>
+        <div class="cv-block">
+          <h4><span data-l="en">Experience</span><span data-l="zh">經歷</span></h4>
+          <ul class="timeline">
+            <li><span class="when">2023–</span><span><span data-l="en">Professor</span><span data-l="zh">教授</span><span class="org"><span data-l="en">Dept. of Harbor and River Engineering, NTOU</span><span data-l="zh">國立臺灣海洋大學河海工程學系</span></span></span></li>
+            <li><span class="when">2017–2023</span><span><span data-l="en">Associate Professor</span><span data-l="zh">副教授</span><span class="org"><span data-l="en">Dept. of Harbor and River Engineering, NTOU</span><span data-l="zh">國立臺灣海洋大學河海工程學系</span></span></span></li>
+            <li><span class="when">2012–2017</span><span><span data-l="en">Assistant Professor</span><span data-l="zh">助理教授</span><span class="org"><span data-l="en">Dept. of Harbor and River Engineering, NTOU</span><span data-l="zh">國立臺灣海洋大學河海工程學系</span></span></span></li>
+            <li><span class="when">2009–2012</span><span><span data-l="en">Technical Manager, Ocean Engineering Section</span><span data-l="zh">水利工程部海洋工程組 技術經理</span><span class="org"><span data-l="en">Sinotech Engineering Services, Ltd.</span><span data-l="zh">環興科技股份有限公司</span></span></span></li>
+            <li><span class="when">2003–2009</span><span><span data-l="en">Project Manager, Hydraulic &amp; Ocean Engineering Dept.</span><span data-l="zh">水利及海洋工程部 計畫主管</span><span class="org"><span data-l="en">Sinotech Engineering Consultants, Ltd.</span><span data-l="zh">中興工程顧問公司</span></span></span></li>
+            <li><span class="when"><span data-l="en">Earlier</span><span data-l="zh">早期</span></span><span><span data-l="en">Postdoctoral researcher, NTOU HRE; Adjunct Assistant Professor, Dept. of Civil Engineering, Tungnan Institute of Technology</span><span data-l="zh">國立臺灣海洋大學河海工程系博士後研究；東南技術學院土木系兼任助理教授</span></span></li>
+          </ul>
+        </div>
+        <div class="cv-block">
+          <h4><span data-l="en">Education</span><span data-l="zh">學歷</span></h4>
+          <ul class="plain">
+            <li><span data-l="en">Ph.D., Harbor and River Engineering, National Taiwan Ocean University</span><span data-l="zh">國立臺灣海洋大學河海工程學系 博士</span></li>
+            <li><span data-l="en">M.S., Harbor and River Engineering, National Taiwan Ocean University</span><span data-l="zh">國立臺灣海洋大學河海工程學系 碩士</span></li>
+            <li><span data-l="en">B.S., Water Resources and Environmental Engineering, Tamkang University</span><span data-l="zh">淡江大學水資源及環境工程學系 學士</span></li>
+          </ul>
+          <h4 style="margin-top:22px"><span data-l="en">Teaching</span><span data-l="zh">開設課程</span></h4>
+          <ul class="plain">
+            <li><span data-l="en">Open-Channel Hydraulics (undergraduate)</span><span data-l="zh">渠道水力學（大學部）</span></li>
+            <li><span data-l="en">Engineering Graphics and Computer Drafting (undergraduate)</span><span data-l="zh">工程圖學暨電腦繪圖（大學部）</span></li>
+            <li><span data-l="en">Marine Environment Construction (graduate)</span><span data-l="zh">海洋環境營造（研究所）</span></li>
+            <li><span data-l="en">Coastal Environmental Monitoring and Management</span><span data-l="zh">海岸環境監測與管理</span></li>
+            <li><span data-l="en">Coastal Morphological Change and Ecological Engineering Methods</span><span data-l="zh">海岸地形變遷與生態工法</span></li>
+          </ul>
+        </div>
+        <div class="cv-block">
+          <h4><span data-l="en">Academic &amp; professional service</span><span data-l="zh">學術服務</span></h4>
+          <ul class="plain">
+            <li><span data-l="en">Technical Program Committee, International Society of Offshore and Polar Engineers (ISOPE)</span><span data-l="zh">International Society of Offshore and Polar Engineers (ISOPE) 技術議程委員</span></li>
+            <li><span data-l="en">Technical Committee, International Conference on Environmental Science and Development (ICESD)</span><span data-l="zh">International Conference on Environmental Science and Development 技術委員</span></li>
+            <li><span data-l="en">Journal Committee (7th term), Taiwan Society of Ocean Engineering</span><span data-l="zh">台灣海洋工程學會第七屆學刊委員會委員</span></li>
+            <li><span data-l="en">Academic Committee, Taiwan Wind Energy Association</span><span data-l="zh">台灣風能協會學術委員會委員</span></li>
+            <li><span data-l="en">Natural Landscape Review Committee, Taoyuan City Government</span><span data-l="zh">桃園市自然地景審議委員會委員</span></li>
+            <li><span data-l="en">Advisory Panel on Coastal Protection Plans, Water Resources Agency</span><span data-l="zh">經濟部水利署「海岸防護計畫輔導作業」諮詢服務團諮詢委員</span></li>
+          </ul>
+        </div>
+        <div class="cv-block">
+          <h4><span data-l="en">Honors</span><span data-l="zh">榮譽</span></h4>
+          <ul class="timeline">
+            <li><span class="when">2021–22</span><span><span data-l="en">Outstanding Teaching Award, NTOU</span><span data-l="zh">110 學年度校級教學優良教師</span></span></li>
+            <li><span class="when">2020–21</span><span><span data-l="en">Industry–Academia Research Achievement Award, NTOU</span><span data-l="zh">109 學年度產學研究成就獎</span></span></li>
+            <li><span class="when">2017–18</span><span><span data-l="en">Industry–Academia Research Achievement Award, NTOU</span><span data-l="zh">106 學年度產學研究成就獎</span></span></li>
+            <li><span class="when">2017–18</span><span><span data-l="en">Outstanding Mentor (12th), NTOU</span><span data-l="zh">106 學年度（第 12 屆）優良導師</span></span></li>
+            <li><span class="when">2016–17</span><span><span data-l="en">Outstanding Teaching Award, NTOU</span><span data-l="zh">105 學年度校級教學優良教師</span></span></li>
+          </ul>
+        </div>
+        <div class="cv-block full">
+          <h4><span data-l="en">Coastal policy, technology transfer &amp; training</span><span data-l="zh">社會服務：海岸防護推動、技術移轉與教育訓練</span></h4>
+          <ul class="plain">
+            <li><span data-l="en">Principal author of the draft <i>Reference Manual for Integrated Coastal Protection Planning and Preparation of Coastal Protection Plans</i> under Taiwan's Coastal Management Act.</span><span data-l="zh">「海岸防護整合規劃及海岸防護計畫擬訂作業參考手冊（草案）」主要編撰者，建立規範。</span></li>
+            <li><span data-l="en">Advisory member for Class-1 coastal protection zones, assisting River Management Branches with integrated planning; coastal protection plans for Yilan, Hsinchu City and Taitung.</span><span data-l="zh">擔任一級海岸防護區位海岸防護計畫之諮詢委員，協助各河川局辦理海岸防護整合規劃；辦理宜蘭、新竹市及臺東等海岸防護計畫。</span></li>
+            <li><span data-l="en">Instructor, WRA professional training: Coastal Protection and Environmental Restoration (2013); Numerical Modelling in Coastal Engineering (2013, 2017); Design of Coastal Protection Facilities and Environment Construction (2018); Coastal Protection Engineering Design (2018).</span><span data-l="zh">水利署水利人員專業職能訓練講師：「海岸防護及環境復育」（102 年）、「海岸工程數值模擬分析方法」（102、106 年）、「海岸防護設施設計及環境營造」（107 年）、「海岸防護工程設計」（107 年）。</span></li>
+            <li><span data-l="en">Water-environment advisory team, Taitung County Government (2017–2018): training on coastal conservation and redevelopment strategies.</span><span data-l="zh">106–107 年度臺東縣政府水環境改善輔導顧問團，辦理「海岸環境保育與改造策略」教育訓練。</span></li>
+            <li><span data-l="en">Technology transfer of dune and sandbar restoration and coastal erosion-control methods (see case C4).</span><span data-l="zh">沙丘、沙洲復育工法及海岸侵蝕防制工法技術移轉（見案例 C4）。</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= APPROACH ================= -->
+<section class="section approach" aria-labelledby="approach-title">
+  <div class="wrap approach-grid">
+    <div class="approach-thesis">
+      <p class="eyebrow"><span data-l="en">Approach</span><span data-l="zh">研究理念</span></p>
+      <h2 id="approach-title"><span data-l="en">A coastline is a moving sediment system, not a fixed line.</span><span data-l="zh">海岸不是一條固定的線，而是一個動態土砂系統。</span></h2>
+      <p data-l="en">Shoreline advance and retreat result from the long-term action of waves, tides, longshore drift, river sediment supply and man-made structures. Any local intervention can shift the sediment balance, so protection is planned for the coastal system as a whole rather than for a single line on a map.</p>
+      <p data-l="zh">灘線的前進與後退，是波浪、潮汐、沿岸漂砂、河川供砂與人工構造物長期共同作用的結果；任何局部工程介入，都可能改變原有的土砂輸移與侵淤平衡。因此，海岸防護應從整體海岸系統出發，而非只著眼於固定灘線。</p>
+    </div>
+    <ol class="steps">
+      <li><h3><span data-l="en">Monitor change</span><span data-l="zh">掌握變遷</span></h3><p><span data-l="en">Long-term surveys and satellite records of shorelines and beach profiles.</span><span data-l="zh">長期監測灘線與海岸地形變化。</span></p></li>
+      <li><h3><span data-l="en">Understand mechanisms</span><span data-l="zh">理解機制</span></h3><p><span data-l="en">Wave, drift and river-supply modelling to explain erosion and accretion.</span><span data-l="zh">以波浪、漂砂與河川供砂模擬解析侵淤機制。</span></p></li>
+      <li><h3><span data-l="en">Keep the sediment budget</span><span data-l="zh">維持土砂平衡</span></h3><p><span data-l="en">Sand bypassing, beach nourishment and nature-based solutions.</span><span data-l="zh">迂迴供沙、養灘與自然為本解方。</span></p></li>
+      <li><h3><span data-l="en">Adapt in time</span><span data-l="zh">適時調適</span></h3><p><span data-l="en">Protect, accommodate or retreat according to risk, and revise as the coast changes.</span><span data-l="zh">依風險採保護、適應或後撤，並滾動檢討。</span></p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= RESEARCH ================= -->
+<section class="section" id="research" aria-labelledby="research-title">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow"><span data-l="en">Research</span><span data-l="zh">研究主題</span></p>
+      <h2 id="research-title"><span data-l="en">Five research areas</span><span data-l="zh">五個研究方向</span></h2>
+      <p><span data-l="en">Each area is illustrated with case studies from recent projects.</span><span data-l="zh">每個方向以近期計畫的實際案例說明。</span></p>
+    </div>
+
+    <ul class="theme-index">
+      <li><a href="#theme-a"><span class="key">A</span><strong><span data-l="en">Coastal morphodynamics &amp; sediment transport</span><span data-l="zh">海岸地形變遷與輸砂</span></strong><span><span data-l="en">Waves, longshore drift, river sediment supply</span><span data-l="zh">波浪、沿岸漂砂、河川供砂</span></span></a></li>
+      <li><a href="#theme-b"><span class="key">B</span><strong><span data-l="en">Typhoon waves &amp; extreme sea states</span><span data-l="zh">颱風波浪與極值海象</span></strong><span><span data-l="en">Nearshore typhoon waves, storm surge, design tide levels</span><span data-l="zh">近岸颱風波浪、暴潮、禦潮水位</span></span></a></li>
+      <li><a href="#theme-c"><span class="key">C</span><strong><span data-l="en">Coastal risk &amp; adaptation</span><span data-l="zh">海岸風險評估與調適</span></strong><span><span data-l="en">Risk maps, protection performance, nature-based solutions</span><span data-l="zh">風險地圖、防護成效、自然為本解方</span></span></a></li>
+      <li><a href="#theme-d"><span class="key">D</span><strong><span data-l="en">AI for coastal monitoring</span><span data-l="zh">AI 海岸監測</span></strong><span><span data-l="en">Deep learning on satellite and camera images</span><span data-l="zh">衛星與攝影影像深度學習</span></span></a></li>
+      <li><a href="#theme-e"><span class="key">E</span><strong><span data-l="en">Wave measurement &amp; physical modelling</span><span data-l="zh">波浪量測與水工模型</span></strong><span><span data-l="en">Low-cost wave basin, stereo imaging, radar</span><span data-l="zh">小型造波水槽、立體影像、雷達</span></span></a></li>
+    </ul>
+
+    <!-- ---------- A ---------- -->
+    <article class="theme" id="theme-a">
+      <div class="theme-side">
+        <p class="eyebrow">A</p>
+        <h3><span data-l="en">Coastal morphodynamics &amp; sediment transport</span><span data-l="zh">海岸地形變遷與輸砂機制</span></h3>
+        <p><span data-l="en">Field monitoring and numerical modelling of nearshore waves, longshore sediment transport and river sediment supply, used to quantify erosion and accretion and explain why a shoreline advances or retreats.</span><span data-l="zh">以現場監測與數值模擬分析近岸波浪、沿岸漂砂與河川供砂，量化海岸侵淤量體，並解析灘線前進與後退的機制。</span></p>
+        <ul class="tags">
+          <li><span data-l="en">Nearshore wave modelling</span><span data-l="zh">近岸波場模擬</span></li>
+          <li><span data-l="en">Sediment budget</span><span data-l="zh">土砂收支</span></li>
+          <li><span data-l="en">Sand bypassing &amp; nourishment</span><span data-l="zh">迂迴供沙與養灘</span></li>
+          <li><span data-l="en">River–coast interaction</span><span data-l="zh">河川輸砂</span></li>
+          <li><span data-l="en">Beach-profile surveys</span><span data-l="zh">斷面測量</span></li>
+        </ul>
+        <div class="theme-refs">
+          <span class="eyebrow"><span data-l="en">Related papers</span><span data-l="zh">相關論文</span></span>
+          <a href="https://doi.org/10.3390/su16135563" target="_blank" rel="noopener">Hsu, Huang &amp; Ye (2024) Sustainability</a>
+          <a href="https://doi.org/10.1016/j.seares.2023.102432" target="_blank" rel="noopener">Huang, Hsu &amp; Ye (2023) J. Sea Research</a>
+          <a href="https://doi.org/10.1016/j.seares.2022.102234" target="_blank" rel="noopener">Huang (2022) J. Sea Research</a>
+          <a href="https://doi.org/10.1016/j.csr.2017.01.011" target="_blank" rel="noopener">Huang (2017) Continental Shelf Research</a>
+        </div>
+      </div>
+      <div class="theme-main">
+        <section class="case" id="case-hsinchu">
+          <div class="case-head">
+            <p class="eyebrow"><span data-l="en">Case A1 · Hsinchu City</span><span data-l="zh">案例 A1 · 新竹市</span></p>
+            <h4><span data-l="en">Monsoon wave fields and sediment-bypass management on the Nangang coast</span><span data-l="zh">新竹港南海岸：季風波場與輸砂平衡管理</span></h4>
+          </div>
+          <figure class="fig">
+            <div class="fig-grid g4">
+              <div class="fig"><span class="panel-label"><span class="season"><span data-l="en">Summer</span><span data-l="zh">夏季</span></span><span>W</span></span><div class="frame"><img src="hsinchu-summer-w.webp" width="560" height="816" loading="lazy" alt="Simulated wave field, summer monsoon, westerly waves"></div></div>
+              <div class="fig"><span class="panel-label"><span class="season"><span data-l="en">Summer</span><span data-l="zh">夏季</span></span><span>WSW</span></span><div class="frame"><img src="hsinchu-summer-wsw.webp" width="560" height="816" loading="lazy" alt="Simulated wave field, summer monsoon, west-southwesterly waves"></div></div>
+              <div class="fig"><span class="panel-label"><span class="season"><span data-l="en">Winter</span><span data-l="zh">冬季</span></span><span>N</span></span><div class="frame"><img src="hsinchu-winter-n.webp" width="560" height="816" loading="lazy" alt="Simulated wave field, winter monsoon, northerly waves"></div></div>
+              <div class="fig"><span class="panel-label"><span class="season"><span data-l="en">Winter</span><span data-l="zh">冬季</span></span><span>NNW</span></span><div class="frame"><img src="hsinchu-winter-nnw.webp" width="560" height="816" loading="lazy" alt="Simulated wave field, winter monsoon, north-northwesterly waves"></div></div>
+            </div>
+            <figcaption><b>Fig. A1</b> <span data-l="en">Simulated nearshore wave height and direction for four monsoon wave conditions. Boundary conditions from Hsinchu buoy observations.</span><span data-l="zh">四種季風波浪條件下之近岸波高與波向分布。邊界條件採新竹觀測浮標實測資料。</span></figcaption>
+          </figure>
+          <div class="case-body">
+            <div class="fig-grid g2">
+              <figure class="fig"><div class="frame"><img src="hsinchu-bypass.webp" width="919" height="1299" loading="lazy" alt="Map of sediment bypassing at the Hsinchu Fishery Harbor with shorelines from 2013, 2019 and 2024"></div>
+                <figcaption><b>Fig. A2</b> <span data-l="en">Sediment bypassing around the Hsinchu Fishery Harbor: placement area A, receiving area B. Shorelines 2013/05, 2019/04, 2024/06; transects S1–S12.</span><span data-l="zh">新竹漁港迂迴供沙：A 沙源補注區、B 沙源受補區。灘線 2013/05、2019/04、2024/06；檢核斷面 S1–S12。</span></figcaption></figure>
+              <figure class="fig"><div class="frame pad"><img src="hsinchu-volume.webp" width="593" height="1183" loading="lazy" alt="Bar chart of erosion and accretion volume by coastal cell C1 to C11"></div>
+                <figcaption><b>Fig. A3</b> <span data-l="en">Erosion (−) and accretion (+) volume by cell C1–C11, Apr 2019 – Jun 2024 (unit: 10⁴ m³).</span><span data-l="zh">各區段侵淤量體 C1–C11，2019/04–2024/06（單位：萬 m³）。</span></figcaption></figure>
+            </div>
+            <ul class="findings">
+              <li data-l="en"><b>Summer monsoon.</b> Waves from W and WSW reach the Nangang and Xiangshan segments directly; nearshore wave height is about 0.55 m. The Touqian River mouth is sheltered by the fishery-harbor breakwater, so waves there are smaller.</li>
+              <li data-l="zh"><b>夏季季風：</b>波浪直接入射港南及香山海岸區段，港南近岸波高約 0.55 m；頭前溪口受新竹漁港海堤遮蔽，波高相對較小。</li>
+              <li data-l="en"><b>Winter monsoon.</b> Larger waves spread over the area north of the harbor, the Nangang segment and offshore of Haishan Fishery Harbor. The very mild offshore slope at Xiangshan refracts incoming waves.</li>
+              <li data-l="zh"><b>冬季季風：</b>較大波高分布於新竹漁港北側、港南海岸區段與海山漁港外海；香山外海地形坡度極緩，入射波浪因地形效應產生折射。</li>
+              <li data-l="en"><b>Sediment budget.</b> Volumes by coastal cell were computed from surveys between April 2019 and June 2024. The intertidal beach widened after sand was placed south of the harbor.</li>
+              <li data-l="zh"><b>輸砂平衡：</b>以 2019 年 4 月至 2024 年 6 月測量資料計算各區段侵淤量體；港南補沙後，潮間帶沙灘變寬。</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="case" id="case-beinan">
+          <div class="case-head">
+            <p class="eyebrow"><span data-l="en">Case A2 · Taitung</span><span data-l="zh">案例 A2 · 臺東</span></p>
+            <h4><span data-l="en">River sediment supply and extreme sea states at the Beinan River mouth</span><span data-l="zh">卑南溪口：河川輸砂與極值海象對海岸地形之影響</span></h4>
+          </div>
+          <div class="case-body">
+            <figure class="fig"><div class="frame pad"><img src="beinan-compare.webp" width="1100" height="1254" loading="lazy" alt="Measured and simulated bed-level change maps at the Beinan River mouth"></div>
+              <figcaption><b>Fig. A4</b> <span data-l="en">Measured (left) and simulated (right) bed-level change at the Beinan River mouth.</span><span data-l="zh">卑南溪口實測（左）與模擬（右）之地形變化。</span></figcaption></figure>
+            <div class="case" style="gap:20px">
+              <ul class="findings">
+                <li><span data-l="en">River sediment discharge is monitored in the field and fed into a morphological model of the river-mouth coast.</span><span data-l="zh">以現場監測河川輸砂，作為河口海岸地形變遷模擬之輸入。</span></li>
+                <li><span data-l="en">The model separates the effect of extreme river sediment loads from that of extreme sea states, and gives the volumes involved.</span><span data-l="zh">分別探討極值河川輸砂量與極值海象對海岸地形之影響及量體。</span></li>
+                <li><span data-l="en">Simulated bed changes are checked against repeated bathymetric surveys.</span><span data-l="zh">模擬地形變化與實測地形比對驗證。</span></li>
+              </ul>
+              <div class="fig-grid g2">
+                <figure class="fig"><div class="frame"><img src="beinan-station.webp" width="295" height="222" loading="lazy" alt="River sediment monitoring station on a bridge"></div><figcaption><span data-l="en">River sediment monitoring</span><span data-l="zh">河川輸砂監測</span></figcaption></figure>
+                <figure class="fig"><div class="frame"><img src="beinan-domain.webp" width="911" height="411" loading="lazy" alt="Model domain and monitoring stations for the Beinan River mouth"></div><figcaption><span data-l="en">Model domain and stations</span><span data-l="zh">模擬範圍與測站</span></figcaption></figure>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </article>
+
+    <!-- ---------- B ---------- -->
+    <article class="theme" id="theme-b">
+      <div class="theme-side">
+        <p class="eyebrow">B</p>
+        <h3><span data-l="en">Typhoon waves &amp; extreme sea states</span><span data-l="zh">颱風波浪、暴潮與極值海象</span></h3>
+        <p><span data-l="en">Simulation of typhoon waves, storm surge and extreme sea states, translated into hazard potential for specific seawalls and revetments.</span><span data-l="zh">模擬颱風波浪、暴潮與極值海象，並轉換為個別海堤與護岸之災害潛勢。</span></p>
+        <ul class="tags">
+          <li><span data-l="en">Typhoon wave simulation</span><span data-l="zh">颱風波浪模擬</span></li>
+          <li><span data-l="en">Storm surge</span><span data-l="zh">暴潮分析</span></li>
+          <li><span data-l="en">Directional wave spectra</span><span data-l="zh">方向頻譜</span></li>
+          <li><span data-l="en">Design tide levels</span><span data-l="zh">禦潮水位</span></li>
+          <li><span data-l="en">Offshore wind metocean</span><span data-l="zh">離岸風能潛勢</span></li>
+        </ul>
+        <div class="theme-refs">
+          <span class="eyebrow"><span data-l="en">Related work</span><span data-l="zh">相關研究</span></span>
+          <a href="https://doi.org/10.1016/j.coastaleng.2007.05.015" target="_blank" rel="noopener">Huang et al. (2007) Coastal Engineering</a>
+          <a href="https://doi.org/10.1016/j.csr.2017.01.011" target="_blank" rel="noopener">Huang (2017) Continental Shelf Research</a>
+          <span><span data-l="en">Review of design tide levels under climate change (WRA, 2024)</span><span data-l="zh">禦潮水位通盤檢討與氣候變遷衝擊研究（水利署，2024）</span></span>
+        </div>
+      </div>
+      <div class="theme-main">
+        <section class="case" id="case-hinnamnor">
+          <div class="case-head">
+            <p class="eyebrow"><span data-l="en">Case B1 · Hualien</span><span data-l="zh">案例 B1 · 花蓮</span></p>
+            <h4><span data-l="en">Typhoon Hinnamnor (2022): hazard potential along the Hualien coast</span><span data-l="zh">軒嵐諾颱風（2022）：花蓮海岸災害潛勢評析</span></h4>
+          </div>
+          <div class="case-body">
+            <div class="fig-grid g2">
+              <figure class="fig"><div class="frame"><video src="hinnamnor-waves.mp4" poster="hinnamnor-poster.webp" width="500" height="976" autoplay muted loop playsinline aria-label="Animated simulation of significant wave height along the Hualien coast"></video></div>
+                <figcaption><b>Fig. B1</b> <span data-l="en">Simulated significant wave height along the Hualien coast, 1–2 Sep 2022 (TWD97, m).</span><span data-l="zh">花蓮海岸示性波高模擬，2022/09/01–02（TWD97，m）。</span></figcaption></figure>
+              <figure class="fig"><div class="frame"><img src="hinnamnor-track.webp" width="743" height="544" loading="lazy" alt="Forecast track of Typhoon Hinnamnor on 1 September 2022"></div>
+                <figcaption><b>Fig. B2</b> <span data-l="en">Track potential of Typhoon Hinnamnor, 1 Sep 2022 14:00.</span><span data-l="zh">軒嵐諾颱風路徑潛勢，2022/09/01 14:00。</span></figcaption></figure>
+            </div>
+            <div class="case" style="gap:18px">
+              <div class="datum">
+                <div><b>1–2.5 m</b><span><span data-l="en">hourly mean wave height, Hualien buoy</span><span data-l="zh">花蓮浮標逐時平均浪高</span></span></div>
+                <div><b>25 h</b><span><span data-l="en">waves above 2 m (1 Sep 14:00 – 2 Sep 15:00)</span><span data-l="zh">浪高 &gt;2 m 持續時間</span></span></div>
+              </div>
+              <ul class="findings">
+                <li><span data-l="en">The forecast track ran north along eastern Taiwan, so the Hualien coast was mainly exposed to northerly waves.</span><span data-l="zh">颱風路徑沿臺灣東部由南向北，近臺期間花蓮海岸主要受北浪侵襲。</span></li>
+                <li><span data-l="en">North-facing shorelines on protruding headlands receive the most wave energy. On the north side of a bay, waves arrive normal to the shore for longer, so the hazard is higher than on the south side.</span><span data-l="zh">突出岬頭面向北側之岸線受海洋營力影響最大；灣澳北側波浪垂直入射時間較長、危險度較高，南側則較低。</span></li>
+                <li><span data-l="en">Wave height, direction, duration of normal incidence and hazard level were overlaid to rank seawall segments. <b>Priority:</b> Qixingtan revetment, Qixingtan seawall, Xinshe revetment.</span><span data-l="zh">套疊入射波高、波向、垂直入射時長與危險度，評估各堤段風險。<b>高風險堤段：</b>七星潭保護工、七星潭海堤、新社海岸保護工。</span></li>
+                <li><span data-l="en">Wave boundary conditions from the national marine hazard information platform (臺灣海象災防環境資訊平台).</span><span data-l="zh">波浪邊界條件來源：臺灣海象災防環境資訊平台。</span></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+    </article>
+
+    <!-- ---------- C ---------- -->
+    <article class="theme" id="theme-c">
+      <div class="theme-side">
+        <p class="eyebrow">C</p>
+        <h3><span data-l="en">Coastal risk assessment &amp; adaptation</span><span data-l="zh">海岸災害風險評估與調適</span></h3>
+        <p><span data-l="en">Mapping coastal erosion risk, linking risk levels to protection measures and land-use control, and evaluating how protection works and nature-based solutions perform.</span><span data-l="zh">建置海岸侵蝕災害風險地圖，連結風險等級與防護措施、土地利用管制，並評估防護工程與自然為本解方之成效。</span></p>
+        <ul class="tags">
+          <li><span data-l="en">Erosion risk mapping</span><span data-l="zh">侵蝕風險地圖</span></li>
+          <li><span data-l="en">Bayesian networks</span><span data-l="zh">貝氏網路</span></li>
+          <li><span data-l="en">Seawall risk assessment</span><span data-l="zh">海堤風險評估</span></li>
+          <li><span data-l="en">Protection performance</span><span data-l="zh">防護成效</span></li>
+          <li><span data-l="en">Nature-based solutions</span><span data-l="zh">自然為本解方</span></li>
+          <li><span data-l="en">Dune restoration</span><span data-l="zh">沙丘復育</span></li>
+        </ul>
+        <div class="theme-refs">
+          <span class="eyebrow"><span data-l="en">Related papers</span><span data-l="zh">相關論文</span></span>
+          <a href="https://doi.org/10.1007/s11069-026-08335-y" target="_blank" rel="noopener">Ye, Huang &amp; Hsu (2026) Natural Hazards</a>
+          <a href="https://doi.org/10.3390/su142114505" target="_blank" rel="noopener">Huang, Ye &amp; Hsu (2022) Sustainability</a>
+          <a href="https://doi.org/10.3390/w10080988" target="_blank" rel="noopener">Huang et al. (2018) Water</a>
+          <a href="https://doi.org/10.1016/j.ecoleng.2014.09.038" target="_blank" rel="noopener">Huang &amp; Yim (2014) Ecological Engineering</a>
+        </div>
+      </div>
+      <div class="theme-main">
+        <section class="case" id="case-yunlin">
+          <div class="case-head">
+            <p class="eyebrow"><span data-l="en">Case C1 · Yunlin</span><span data-l="zh">案例 C1 · 雲林</span></p>
+            <h4><span data-l="en">Coastal erosion risk map and response levels</span><span data-l="zh">雲林海岸：侵蝕災害風險地圖與對應措施</span></h4>
+          </div>
+          <div class="table-wrap">
+                <table>
+                  <thead><tr>
+                    <th><span data-l="en">Risk</span><span data-l="zh">風險等級</span></th>
+                    <th><span data-l="en">Response resources</span><span data-l="zh">防救災資源投入</span></th>
+                    <th><span data-l="en">Infrastructure</span><span data-l="zh">基礎軟硬體改善</span></th>
+                    <th><span data-l="en">Land-use control</span><span data-l="zh">土地利用管制</span></th>
+                  </tr></thead>
+                  <tbody>
+                    <tr><td><span class="lvl" style="--c:#e3c14a"><span data-l="en">Low</span><span data-l="zh">低</span></span></td><td><span data-l="en">Gradual</span><span data-l="zh">較緩程度</span></td><td><span data-l="en">Continuous monitoring</span><span data-l="zh">持續監測</span></td><td><span data-l="en">Low</span><span data-l="zh">低強度</span></td></tr>
+                    <tr><td><span class="lvl" style="--c:#e58a2c"><span data-l="en">Medium</span><span data-l="zh">中</span></span></td><td><span data-l="en">Moderate</span><span data-l="zh">中等程度</span></td><td><span data-l="en">Planned improvement</span><span data-l="zh">計畫改善</span></td><td><span data-l="en">Medium</span><span data-l="zh">中強度</span></td></tr>
+                    <tr><td><span class="lvl" style="--c:#c8322b"><span data-l="en">High</span><span data-l="zh">高</span></span></td><td><span data-l="en">Urgent</span><span data-l="zh">急迫程度</span></td><td><span data-l="en">Immediate improvement</span><span data-l="zh">立即改善</span></td><td><span data-l="en">High</span><span data-l="zh">高強度</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+          <div class="case-body">
+            <figure class="fig"><div class="frame"><img src="yunlin-risk.webp" width="1038" height="1468" loading="lazy" alt="Village-level coastal erosion risk map of the Yunlin coast"></div>
+              <figcaption><b>Fig. C1</b> <span data-l="en">Coastal erosion risk by village, Yunlin coast.</span><span data-l="zh">雲林海岸各村里海岸侵蝕災害風險。</span></figcaption></figure>
+            <ul class="findings">
+                <li><span data-l="en">Erosion-hotspot villages (Wengang, Hefeng, Yongfeng, Wugang, Lunnan, Guanggou, Gangxi) are mostly low to medium risk. Yongfeng is very low because its early-warning system is better than its neighbours'.</span><span data-l="zh">侵蝕熱點岸段村里（蚊港、和豐、永豐、五港、崙南、廣溝、港西）多為中低風險；永豐村因預警制度較鄰近村里完善，為極低度風險。</span></li>
+                <li><span data-l="en">Bodong village is rated medium risk and has the highest erosion-risk score on the Yunlin coast, although it currently shows no erosion potential. The drivers are a narrow wave-buffer zone, higher population density and activity, and weaker early warning.</span><span data-l="zh">箔東村為中度風險，係雲林濱海陸地海岸侵蝕災害風險值最高之村里，目前尚無侵蝕潛勢；主因為消波緩衝帶寬度風險值較高、人口密度與活動頻繁程度較高、預警能力較弱。</span></li>
+              </ul>
+          </div>
+        </section>
+
+        <section class="case" id="case-hualien">
+          <div class="case-head">
+            <p class="eyebrow"><span data-l="en">Case C2 · Hualien</span><span data-l="zh">案例 C2 · 花蓮</span></p>
+            <h4><span data-l="en">Performance of nourishment and submerged breakwaters, Beibin–Nanbin–Huaren coast</span><span data-l="zh">花蓮南北濱及化仁海岸：養灘與潛堤之侵蝕防治成效</span></h4>
+          </div>
+          <figure class="fig">
+            <div class="fig-grid g2">
+              <div class="frame"><img src="hualien-a.webp" width="1016" height="1125" loading="lazy" alt="Erosion and accretion map, northern Hualien coast"></div>
+              <div class="frame"><img src="hualien-b.webp" width="1081" height="1125" loading="lazy" alt="Erosion and accretion map, southern Hualien coast"></div>
+            </div>
+            <figcaption><b>Fig. C2</b> <span data-l="en">Bed-level change between June 2019 and December 2023, with shoreline profiles by transect.</span><span data-l="zh">2019 年 6 月至 2023 年 12 月地形變化與各斷面灘線變化。</span></figcaption>
+          </figure>
+          <ul class="findings">
+            <li><span data-l="en"><b>Beibin seawall (nourishment):</b> beach erosion where no artificial sand is supplied; nearshore accretion from offshore transport.</span><span data-l="zh"><b>北濱海堤（養灘）：</b>灘地侵蝕（無人工砂源補償）；近岸海域淤積（離岸輸砂）。</span></li>
+            <li><span data-l="en"><b>Nanbin seawall (submerged breakwater):</b> accretion behind the breakwater, erosion in front of it. Waves break early and the water behind is calmer.</span><span data-l="zh"><b>南濱海堤（潛堤）：</b>潛堤後側淤積、前方侵蝕（波浪提前碎波，後方海域靜穩）。</span></li>
+            <li><span data-l="en"><b>Huaren seawall (submerged breakwater):</b> sand builds up to the breakwater and broken waves scour the shoreline, so the beach erodes while the nearshore accretes.</span><span data-l="zh"><b>化仁海堤（潛堤）：</b>砂灘淤至潛堤、碎波沖刷灘線，灘地侵蝕；近岸海域淤積。</span></li>
+            <li><span data-l="en"><b>Huaren revetment:</b> the largest changes, driven by sediment from the adjacent Hualien River mouth. Across this sediment cell, both the shoreline and the nearshore zone show net accretion.</span><span data-l="zh"><b>化仁海岸保護工：</b>緊鄰花蓮溪口，受河川輸砂影響，侵淤變化較顯著。整體輸砂單元之灘線及近岸海域皆呈淤積。</span></li>
+          </ul>
+        </section>
+
+        <section class="case" id="case-adapt">
+          <div class="case-head">
+            <p class="eyebrow"><span data-l="en">Case C3 · Taitung City</span><span data-l="zh">案例 C3 · 臺東市區段</span></p>
+            <h4><span data-l="en">Adaptation planning: protect, accommodate, retreat</span><span data-l="zh">海岸環境治理規劃與調適：保護、適應、後撤</span></h4>
+          </div>
+          <figure class="fig"><div class="frame"><img src="taitung-adapt.webp" width="1439" height="475" loading="lazy" alt="Photographs of the Taitung city coastal segment before and after improvement"></div>
+            <figcaption><b>Fig. C3</b> <span data-l="en">Taitung city coast, January and May 2026: existing protection (left) and re-laid armour units with vegetation cover to reduce blown sand (right).</span><span data-l="zh">臺東市區段海岸（2026 年 1 月、5 月攝）：既有保護工（左）；消波塊重新吊放佈設，輔以植生覆蓋減緩揚塵（右）。</span></figcaption></figure>
+          <div class="case-body flip">
+            <ul class="findings">
+              <li><span data-l="en"><b>Protect:</b> review and upgrade existing hard structures, which remain necessary here, using ecological and hybrid protection methods that meet the design standard.</span><span data-l="zh"><b>保護：</b>既有混凝土硬式設施不可少，檢討、調整與改善現有結構物，採用符合防護標準之生態、複合型海岸保護工法。</span></li>
+              <li><span data-l="en"><b>Accommodate:</b> adjust building types, land use and livelihoods to the hazard risk, and strengthen early warning and emergency response.</span><span data-l="zh"><b>適應：</b>視災害潛勢導入新的建築型態、土地利用及生產經營方式，並加強災害預警與應變機制。</span></li>
+              <li><span data-l="en"><b>Retreat:</b> avoid or relocate when impacts exceed what protection standards and adaptation can handle.</span><span data-l="zh"><b>後撤：</b>當外在衝擊超過防護標準及適應策略所能因應時，以規避、退讓方式避免損失。</span></li>
+              <li><span data-l="en"><b>Dunes as sand reserve:</b> constructed dunes supply sand and absorb wave attack, following nature-based-solution principles. Framework: first review of Taiwan's Integrated Coastal Management Plan.</span><span data-l="zh"><b>砂丘工法：</b>作為砂源補注，防治侵蝕並降低浪襲衝擊，符合 NbS 規劃原則。依據整體海岸管理計畫第一次通盤檢討之調適策略。</span></li>
+            </ul>
+            <figure class="fig"><div class="frame pad"><img src="dune-diagram.webp" width="734" height="457" loading="lazy" alt="Schematic of dune lines used for sediment-balance control"></div>
+              <figcaption><b>Fig. C4</b> <span data-l="en">Sediment-balance control with dune lines (schematic).</span><span data-l="zh">輸砂平衡控制策略－砂丘防護示意。</span></figcaption></figure>
+          </div>
+        </section>
+
+        <section class="case" id="case-dune">
+          <div class="case-head">
+            <p class="eyebrow"><span data-l="en">Case C4 · Tainan</span><span data-l="zh">案例 C4 · 臺南</span></p>
+            <h4><span data-l="en">Sand-dune and sandbar restoration field trials</span><span data-l="zh">沙丘、沙洲復育工法現地試驗</span></h4>
+          </div>
+          <p class="case-text"><span data-l="en">34 of Taiwan's 82 wetlands of national importance lie on the coast, covering about 49,000 ha, or 70% of their total area. Dunes and sandbars shield these wetlands from offshore waves. Commissioned by the WRA Water Resources Planning Institute, the lab tested restoration methods on the Tainan coast and transferred them to agencies through site demonstrations. The work is cited in the UN guide <i>Options for Ecosystem-based Adaptation in Coastal Environments</i>.</span><span data-l="zh">國內 82 處國家重要濕地中，位於海岸地區者計 34 處，面積約 4 萬 9 千公頃，佔總面積 70%。沙丘與沙洲是海岸濕地抵禦外海風浪的天然屏障。研究室受水利署水利規劃試驗所委託進行「海岸沙丘沙洲復育規劃」，以臺南海岸為案例進行現場復育工法試驗，並辦理現場觀摩與技術移轉；研究論文獲聯合國《以生態為本之海岸環境調適策略－操作手冊》引用。</span></p>
+          <div class="fig-grid g3">
+            <figure class="fig photo"><div class="frame"><img src="dune-field-1.webp" width="625" height="412" loading="lazy" alt="Sand fences installed on a beach for dune restoration"></div><figcaption><span data-l="en">Sand-fence trial</span><span data-l="zh">攔砂籬試驗</span></figcaption></figure>
+            <figure class="fig photo"><div class="frame"><img src="dune-field-3.webp" width="628" height="418" loading="lazy" alt="Excavator placing a gabion unit on the beach"></div><figcaption><span data-l="en">Installation on site</span><span data-l="zh">現場施作</span></figcaption></figure>
+            <figure class="fig photo"><div class="frame"><img src="dune-field-4.webp" width="638" height="423" loading="lazy" alt="Group of engineers visiting the restoration site"></div><figcaption><span data-l="en">Site demonstration for agencies</span><span data-l="zh">試驗現場觀摩</span></figcaption></figure>
+          </div>
+        </section>
+      </div>
+    </article>
+
+    <!-- ---------- D ---------- -->
+    <article class="theme" id="theme-d">
+      <div class="theme-side">
+        <p class="eyebrow">D</p>
+        <h3><span data-l="en">AI for coastal monitoring</span><span data-l="zh">人工智慧應用於海岸監測</span></h3>
+        <p><span data-l="en">Deep-learning methods that turn satellite and camera images into shoreline positions and wave run-up, reducing the need for manual digitising.</span><span data-l="zh">以深度學習將衛星與攝影影像轉換為海岸線位置與波浪溯升量，減少人工數化作業。</span></p>
+        <ul class="tags">
+          <li><span data-l="en">Deep learning</span><span data-l="zh">深度學習</span></li>
+          <li><span data-l="en">Satellite shoreline extraction</span><span data-l="zh">衛星水線擷取</span></li>
+          <li>U-Net</li>
+          <li><span data-l="en">Wave run-up</span><span data-l="zh">波浪溯升</span></li>
+          <li><span data-l="en">Coordinate transformation</span><span data-l="zh">座標轉換</span></li>
+        </ul>
+      </div>
+      <div class="theme-main">
+        <section class="case" id="case-satellite">
+          <div class="case-head">
+            <p class="eyebrow"><span data-l="en">Case D1</span><span data-l="zh">案例 D1</span></p>
+            <h4><span data-l="en">Long-term shoreline trends from satellite imagery</span><span data-l="zh">衛星影像長期地形變化趨勢分析</span></h4>
+          </div>
+          <div class="case-body">
+            <figure class="fig"><div class="frame"><img src="shoreline-ai.webp" width="846" height="1196" loading="lazy" alt="Satellite image with measured and satellite-derived shorelines along transects P1 to P15"></div>
+              <figcaption><b>Fig. D1</b> <span data-l="en">0 m isobath from survey data vs. shoreline and 0 m isobath from satellite imagery, transects P1–P15, June 2020 (TWD97).</span><span data-l="zh">實測 0 m 等深線與衛星影像海岸線、0 m 等深線比較，斷面 P1–P15，2020/06（TWD97）。</span></figcaption></figure>
+            <div class="case" style="gap:18px">
+              <div class="datum"><div><b>≈ 90%</b><span><span data-l="en">agreement of erosion–accretion results with topographic surveys</span><span data-l="zh">衛星影像侵淤分析與地形測量結果之吻合率</span></span></div></div>
+              <ul class="findings">
+                <li><span data-l="en">A deep-learning model locates the instantaneous waterline in each satellite image.</span><span data-l="zh">使用深度學習技術定位衛星影像中的瞬時水線位置。</span></li>
+                <li><span data-l="en">Waterlines are corrected to the 0 m isobath to account for tide and wave conditions at acquisition time.</span><span data-l="zh">考量海洋營力影響，將海岸線位置修正為 0 m 等深線。</span></li>
+                <li><span data-l="en">Topographic survey data serve as the reference for accuracy assessment.</span><span data-l="zh">以地形測量資料作為基準進行驗證。</span></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section class="case" id="case-runup">
+          <div class="case-head">
+            <p class="eyebrow"><span data-l="en">Case D2</span><span data-l="zh">案例 D2</span></p>
+            <h4><span data-l="en">Real-time wave run-up monitoring</span><span data-l="zh">波浪溯升即時監測系統</span></h4>
+          </div>
+          <div class="case-body">
+            <div class="fig-grid" style="gap:14px">
+              <figure class="fig"><div class="frame"><img src="runup-flume.webp" width="1002" height="564" loading="lazy" alt="Camera view of a sloping beach in a flume with the detected run-up line"></div>
+                <figcaption><b>Fig. D2</b> <span data-l="en">Run-up line detected from camera images.</span><span data-l="zh">由影像擷取之溯升線。</span></figcaption></figure>
+              <figure class="fig"><div class="frame pad"><img src="runup-validation.webp" width="605" height="348" loading="lazy" alt="Time series comparing run-up from image analysis with a wave gauge in two tests"></div>
+                <figcaption><b>Fig. D3</b> <span data-l="en">Image analysis vs. wave gauge, two tests.</span><span data-l="zh">影像分析與波高計比較（兩組試驗）。</span></figcaption></figure>
+            </div>
+            <div class="case" style="gap:18px">
+              <div class="datum"><div><b>≈ 15%</b><span><span data-l="en">relative error</span><span data-l="zh">相對誤差</span></span></div></div>
+              <ul class="findings">
+                <li><span data-l="en">A U-Net model extracts the run-up edge automatically, improving measurement precision.</span><span data-l="zh">藉由 U-Net 模型自動化特徵擷取，提升波浪溯升量測精度。</span></li>
+                <li><span data-l="en">A coordinate-transformation system maps image pixels to real-world coordinates and removes the manual digitising step.</span><span data-l="zh">建置座標轉換系統，簡化後續繁雜的數化過程。</span></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+    </article>
+
+    <!-- ---------- E ---------- -->
+    <article class="theme" id="theme-e">
+      <div class="theme-side">
+        <p class="eyebrow">E</p>
+        <h3><span data-l="en">Wave measurement &amp; physical modelling</span><span data-l="zh">小尺度水槽與影像監測系統開發</span></h3>
+        <p><span data-l="en">A low-cost wave basin and image-based measurement methods, from stereo reconstruction in the lab to radar images at a port.</span><span data-l="zh">開發低成本造波水槽與影像量測方法，從實驗室立體重建到港口雷達影像應用。</span></p>
+        <ul class="tags">
+          <li><span data-l="en">1:500 wave basin</span><span data-l="zh">1:500 造波水槽</span></li>
+          <li><span data-l="en">Piston &amp; flap wave makers</span><span data-l="zh">活塞式與推板式造波機</span></li>
+          <li><span data-l="en">Stereo reconstruction</span><span data-l="zh">立體重建</span></li>
+          <li><span data-l="en">CCD imaging</span><span data-l="zh">CCD 遙測影像</span></li>
+          <li><span data-l="en">Marine radar</span><span data-l="zh">雷達影像</span></li>
+        </ul>
+        <div class="theme-refs">
+          <span class="eyebrow"><span data-l="en">Related paper</span><span data-l="zh">相關論文</span></span>
+          <a href="https://doi.org/10.1016/S0378-3839(02)00129-1" target="_blank" rel="noopener">Huang, Chou &amp; Yim (2003) Coastal Engineering</a>
+        </div>
+      </div>
+      <div class="theme-main">
+        <section class="case" id="case-basin">
+          <div class="case-head">
+            <p class="eyebrow"><span data-l="en">Case E1</span><span data-l="zh">案例 E1</span></p>
+            <h4><span data-l="en">Low-cost wave basin with servo-driven wave makers</span><span data-l="zh">以微型伺服馬達建置小型造波機</span></h4>
+          </div>
+          <div class="fig-grid g2">
+            <figure class="fig"><div class="frame"><video src="basin-piston.mp4" poster="basin-piston-poster.webp" width="1280" height="720" autoplay muted loop playsinline preload="metadata" aria-label="Piston-type wave maker running in the wave basin"></video></div>
+              <figcaption><b>Fig. E1</b> <span data-l="en">Piston-type wave maker.</span><span data-l="zh">活塞式造波機（Piston type）。</span></figcaption></figure>
+            <figure class="fig"><div class="frame"><video src="basin-flap.mp4" poster="basin-flap-poster.webp" width="1280" height="720" autoplay muted loop playsinline preload="metadata" aria-label="Flap-type wave maker generating waves, side view through the glass wall"></video></div>
+              <figcaption><b>Fig. E2</b> <span data-l="en">Flap-type wave maker, side view.</span><span data-l="zh">推板式造波機（Flap type）側視。</span></figcaption></figure>
+          </div>
+          <ul class="findings">
+            <li><span data-l="en">Built from micro servo motors and controllers to avoid the cost of a large wave basin, so experiments can be repeated widely.</span><span data-l="zh">以微型伺服馬達與控制器建置小型造波機，改善大型平面水槽成本高、難以普及的問題。</span></li>
+            <li><span data-l="en">Model scale 1:500. Several units linked in series form a serpent-type wave maker.</span><span data-l="zh">縮尺 1:500；將多台造波機串聯，建置蛇行造波機。</span></li>
+            <li><span data-l="en">Wave motion is estimated by combining deep learning with conventional stereo reconstruction and validated against a wave-gauge array.</span><span data-l="zh">結合深度學習與傳統立體重建技術估算波浪運動型態，並以波高計陣列驗證影像分析精度。</span></li>
+          </ul>
+        </section>
+        <section class="case" id="case-remote">
+          <div class="case-head">
+            <p class="eyebrow"><span data-l="en">Case E2 · Taipei Port</span><span data-l="zh">案例 E2 · 臺北港</span></p>
+            <h4><span data-l="en">Directional spectra and wave height from images and radar</span><span data-l="zh">遙感探測：影像方向頻譜與雷達波高</span></h4>
+          </div>
+          <div class="fig-grid g2">
+            <figure class="fig"><div class="frame"><img src="radar-taipei.webp" width="797" height="402" loading="lazy" alt="Marine radar image of sea clutter near Taipei Port"></div><figcaption><b>Fig. E3</b> <span data-l="en">Radar image, Taipei Port.</span><span data-l="zh">臺北港雷達影像。</span></figcaption></figure>
+            <figure class="fig"><div class="frame"><img src="ccd-spectrum.webp" width="252" height="260" loading="lazy" alt="Scatter of wave heights derived from radar images"></div><figcaption><b>Fig. E4</b> <span data-l="en">Significant wave height from radar images vs. measurements.</span><span data-l="zh">雷達影像推估之示性波高與實測比較。</span></figcaption></figure>
+          </div>
+          <ul class="findings">
+            <li><span data-l="en">Digital wave images are converted to directional spectra, giving the distribution of wave energy over direction and frequency.</span><span data-l="zh">將數位波浪影像轉換為方向頻譜，監測波浪於方向域及頻率域之分布。</span></li>
+            <li><span data-l="en">Applications: monitoring wave fields, shoreline change and the position of the surf zone.</span><span data-l="zh">應用：以遙測技術監測波場、岸線變化及碎波帶位置。</span></li>
+          </ul>
+        </section>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ================= PROJECTS ================= -->
+<section class="section" id="projects" aria-labelledby="projects-title">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow"><span data-l="en">Projects</span><span data-l="zh">研究計畫</span></p>
+      <h2 id="projects-title"><span data-l="en">Funded research and agency projects</span><span data-l="zh">國科會與政府委託計畫</span></h2>
+      <p><span data-l="en">NSTC (formerly MOST) grants since 2012 and projects commissioned by the Water Resources Agency, local governments and other agencies since 2020.</span><span data-l="zh">2012 年以來之國科會（含前科技部）研究計畫，以及 2020 年以來經濟部水利署、地方政府與其他機關之委託計畫。</span></p>
+    </div>
+    <div class="controls">
+      <div class="seg" id="proj-type" role="group" aria-label="Project type">
+        <button type="button" data-type="all" aria-pressed="true"><span data-l="en">All</span><span data-l="zh">全部</span><span class="mono" data-count="all">47</span></button>
+        <button type="button" data-type="nstc" aria-pressed="false"><span data-l="en">NSTC</span><span data-l="zh">國科會</span><span class="mono" data-count="nstc">16</span></button>
+        <button type="button" data-type="agency" aria-pressed="false"><span data-l="en">Commissioned</span><span data-l="zh">委託計畫</span><span class="mono" data-count="agency">31</span></button>
+      </div>
+      <label class="select-wrap" for="proj-region"><span data-l="en">Region</span><span data-l="zh">地區</span>
+        <select id="proj-region">
+          <option value="all">All regions · 全部地區</option>
+          <option value="hsinchu">Hsinchu · 新竹</option>
+          <option value="taoyuan">Taoyuan · 桃園</option>
+          <option value="yilan">Yilan · 宜蘭</option>
+          <option value="hualien">Hualien · 花蓮</option>
+          <option value="taitung">Taitung · 臺東</option>
+          <option value="green">Green &amp; Orchid Islands · 綠島蘭嶼</option>
+          <option value="kinmen">Kinmen · 金門</option>
+          <option value="keelung">Keelung · 基隆</option>
+          <option value="national">Taiwan-wide / multi-site · 全國或跨區</option>
+        </select>
+      </label>
+      <span class="count" id="proj-count"></span>
+    </div>
+    <ul class="proj-list" id="proj-list"></ul>
+    <div class="more"><button class="btn" type="button" id="proj-more"></button></div>
+  </div>
+</section>
+
+<!-- ================= PUBLICATIONS ================= -->
+<section class="section" id="publications" aria-labelledby="pubs-title">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow"><span data-l="en">Publications</span><span data-l="zh">論文發表</span></p>
+      <h2 id="pubs-title"><span data-l="en">Journal articles</span><span data-l="zh">期刊論文</span></h2>
+    </div>
+    <div class="pub-group">
+      <h3><span data-l="en">Recent (2019–2026)</span><span data-l="zh">近年（2019–2026）</span><span class="mono" data-count="pubs-recent">11</span></h3>
+      <ol class="pubs" id="pubs-recent"></ol>
+    </div>
+    <div class="pub-group">
+      <h3><span data-l="en">Selected earlier work</span><span data-l="zh">代表性早期論文</span></h3>
+      <ol class="pubs" id="pubs-earlier"></ol>
+    </div>
+    <p class="note"><span data-l="en">Full publication and project records: NSTC Research Talent Database and the NTOU faculty profile.</span><span data-l="zh">完整著作與計畫紀錄請見國科會學術研發服務網與海洋大學研究人才資料庫。</span>
+      <a href="https://hreweb.ntou.edu.tw/p/405-1059-47617,c8049.php?Lang=zh-tw" target="_blank" rel="noopener"><span data-l="en">NTOU faculty profile ↗</span><span data-l="zh">系所教師頁面 ↗</span></a></p>
+  </div>
+</section>
+
+<!-- ================= FACILITIES ================= -->
+<section class="section" id="facilities" aria-labelledby="fac-title">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow"><span data-l="en">Facilities</span><span data-l="zh">研究設施</span></p>
+      <h2 id="fac-title"><span data-l="en">Laboratory and field equipment</span><span data-l="zh">實驗室與現場設備</span></h2>
+    </div>
+
+    <div class="facility">
+      <div class="facility-side">
+        <h3><span data-l="en">Small-scale wave basin</span><span data-l="zh">小尺度造波水槽</span></h3>
+        <p><span data-l="en">Glass-walled basin with servo-driven wave makers and camera-based measurement. See case E1.</span><span data-l="zh">玻璃水槽搭配伺服馬達造波機與影像量測系統，詳見案例 E1。</span></p>
+        <dl class="spec">
+          <dt><span data-l="en">Model scale</span><span data-l="zh">縮尺</span></dt><dd>1 : 500</dd>
+          <dt><span data-l="en">Wave makers</span><span data-l="zh">造波機</span></dt><dd><span data-l="en">Piston, flap; serpent array</span><span data-l="zh">活塞式、推板式；蛇行串聯</span></dd>
+          <dt><span data-l="en">Drive</span><span data-l="zh">驅動</span></dt><dd><span data-l="en">Micro servo motors</span><span data-l="zh">微型伺服馬達</span></dd>
+          <dt><span data-l="en">Measurement</span><span data-l="zh">量測</span></dt><dd><span data-l="en">Stereo cameras, wave-gauge array</span><span data-l="zh">立體攝影、波高計陣列</span></dd>
+        </dl>
+      </div>
+      <div class="fig-grid g2">
+        <figure class="fig photo"><div class="frame"><img src="basin-piston.webp" width="1400" height="788" loading="lazy" alt="Glass wave basin with a small yellow piston-type wave maker"></div><figcaption><span data-l="en">Basin layout, piston type</span><span data-l="zh">水槽配置（活塞式）</span></figcaption></figure>
+        <figure class="fig photo"><div class="frame"><img src="basin-flap.webp" width="1400" height="788" loading="lazy" alt="Flap-type wave maker mounted in the basin, seen through the glass"></div><figcaption><span data-l="en">Flap-type wave maker</span><span data-l="zh">推板式造波機</span></figcaption></figure>
+      </div>
+    </div>
+
+    <div class="facility">
+      <div class="facility-side">
+        <h3><span data-l="en">Field monitoring</span><span data-l="zh">現場監測</span></h3>
+        <p><span data-l="en">Topographic and beach-profile surveys, nearshore instrument deployment and river sediment monitoring for projects along Taiwan's coast and outlying islands.</span><span data-l="zh">執行臺灣本島與離島各計畫之地形與斷面測量、近岸儀器佈放與河川輸砂監測。</span></p>
+      </div>
+      <div class="fig-grid g2">
+        <figure class="fig photo"><div class="frame"><img src="field-deploy-1.webp" width="1215" height="911" loading="lazy" alt="Team lowering an instrument frame from a boat"></div><figcaption><span data-l="en">Instrument deployment from a boat</span><span data-l="zh">船上儀器佈放</span></figcaption></figure>
+        <figure class="fig photo"><div class="frame"><img src="field-deploy-2.webp" width="1400" height="788" loading="lazy" alt="Researcher in a life jacket handling a moored instrument at sea"></div><figcaption><span data-l="en">Nearshore instrument recovery</span><span data-l="zh">近岸儀器回收</span></figcaption></figure>
+        <figure class="fig photo"><div class="frame"><img src="hsinchu-coast-1.webp" width="1000" height="750" loading="lazy" alt="Seawall and armour units on the Hsinchu coast under an overcast sky"></div><figcaption><span data-l="en">Hsinchu coast, 18 Dec 2024, mid to low tide</span><span data-l="zh">新竹海岸，2024/12/18，平潮至低潮</span></figcaption></figure>
+        <figure class="fig photo"><div class="frame"><img src="hsinchu-coast-4.webp" width="1000" height="750" loading="lazy" alt="Beach and armour units along the Hsinchu nourishment area"></div><figcaption><span data-l="en">Hsinchu nourishment area</span><span data-l="zh">新竹市海岸養灘區現況</span></figcaption></figure>
+      </div>
+    </div>
+
+    <div class="facility">
+      <div class="facility-side">
+        <h3><span data-l="en">Environmental wind tunnel</span><span data-l="zh">環境風洞</span></h3>
+        <p><span data-l="en">Operated with Prof. Bao-Shi Shiau's Environmental Wind Tunnel Laboratory in the department. Used for wind engineering studies, including coastal wind-blown sand and offshore wind.</span><span data-l="zh">與本系蕭葆羲教授環境風洞實驗室共同使用，進行風工程相關研究，包括海岸飛沙與離岸風能。</span></p>
+        <dl class="spec">
+          <dt><span data-l="en">Type</span><span data-l="zh">型式</span></dt><dd><span data-l="en">Open-circuit, suction</span><span data-l="zh">開放吸入式</span></dd>
+          <dt><span data-l="en">Total length</span><span data-l="zh">總長</span></dt><dd>22.5 m</dd>
+          <dt><span data-l="en">Test section</span><span data-l="zh">試驗段</span></dt><dd>12.65 × 2 × 1.4–1.8 m</dd>
+          <dt><span data-l="en">Wind speed</span><span data-l="zh">風速</span></dt><dd>0–30 m/s</dd>
+          <dt><span data-l="en">Turbulence</span><span data-l="zh">背景紊流</span></dt><dd>&lt; 0.5 %</dd>
+          <dt><span data-l="en">Uniformity</span><span data-l="zh">斷面均勻性</span></dt><dd>± 1 %</dd>
+        </dl>
+      </div>
+      <div class="fig-grid g3">
+        <figure class="fig photo"><div class="frame"><img src="wt-terrain.webp" width="1270" height="841" loading="lazy" alt="Terrain model on the wind tunnel turntable with wind tufts"></div><figcaption><span data-l="en">Wind tufts on a terrain model</span><span data-l="zh">地形模型風標觀測</span></figcaption></figure>
+        <figure class="fig photo"><div class="frame"><img src="wt-windfarm.webp" width="1308" height="866" loading="lazy" alt="Smoke visualisation of wind-turbine wakes in the tunnel"></div><figcaption><span data-l="en">Smoke visualisation of turbine wakes</span><span data-l="zh">風機尾跡流煙流可視化</span></figcaption></figure>
+        <figure class="fig photo"><div class="frame"><img src="wt-buildings.webp" width="1037" height="777" loading="lazy" alt="Urban building blocks model for pedestrian wind tests"></div><figcaption><span data-l="en">Pedestrian-level wind model</span><span data-l="zh">行人風環境模型</span></figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= JOIN ================= -->
+<section class="section join" id="join" aria-labelledby="join-title">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow"><span data-l="en">For prospective students</span><span data-l="zh">給有興趣的學生</span></p>
+      <h2 id="join-title"><span data-l="en">Join the lab</span><span data-l="zh">加入研究室</span></h2>
+      <p><span data-l="en">Graduate and undergraduate students interested in coastal engineering are welcome to get in touch. Research topics come from the lab's ongoing agency and NSTC projects, so students work with field data from Taiwan's coasts.</span><span data-l="zh">歡迎對海岸工程有興趣的研究生與大學部同學聯繫。研究題目來自研究室進行中的政府委託與國科會計畫，可直接接觸臺灣各地海岸的實測資料。</span></p>
+    </div>
+    <div class="join-grid">
+      <div><h3><span data-l="en">Numerical modelling</span><span data-l="zh">數值模擬</span></h3><p><span data-l="en">Nearshore and typhoon waves, storm surge and morphological change.</span><span data-l="zh">近岸與颱風波浪、暴潮、海岸地形變遷。</span></p></div>
+      <div><h3><span data-l="en">Field monitoring</span><span data-l="zh">現場監測</span></h3><p><span data-l="en">Topographic and beach-profile surveys at sites such as Hsinchu, Hualien, Taitung and Kinmen.</span><span data-l="zh">新竹、花蓮、臺東、金門等場址之地形與斷面測量。</span></p></div>
+      <div><h3><span data-l="en">AI &amp; image analysis</span><span data-l="zh">AI 與影像分析</span></h3><p><span data-l="en">Shoreline extraction from satellite images and U-Net wave run-up detection.</span><span data-l="zh">衛星影像海岸線擷取、U-Net 波浪溯升辨識。</span></p></div>
+      <div><h3><span data-l="en">Laboratory experiments</span><span data-l="zh">水工實驗</span></h3><p><span data-l="en">Small-scale wave basin, stereo imaging and wave-gauge validation.</span><span data-l="zh">小型造波水槽、立體影像與波高計驗證。</span></p></div>
+    </div>
+    <div class="join-cta">
+      <span><span data-l="en">Email Prof. Huang with your CV, transcript and the topic you are interested in:</span><span data-l="zh">請將履歷、成績單與有興趣的題目寄給黃老師：</span></span>
+      <span><span class="mono">A0301@mail.ntou.edu.tw</span><button class="copy" type="button" data-copy="A0301@mail.ntou.edu.tw"><span data-l="en">Copy</span><span data-l="zh">複製</span></button></span>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer" id="contact">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4><span data-l="en">Coastal Engineering &amp; Resilience Lab</span><span data-l="zh">海岸工程與防災研究室</span></h4>
+        <address>
+          <span data-l="en">Room 209, HRE Building I, Department of Harbor and River Engineering<br>National Taiwan Ocean University<br>No. 2, Beining Rd., Zhongzheng Dist., Keelung City 202301, Taiwan</span>
+          <span data-l="zh">國立臺灣海洋大學 河海工程學系 河工一館 209 室<br>202301 基隆市中正區北寧路 2 號</span>
+        </address>
+      </div>
+      <div>
+        <h4><span data-l="en">Contact</span><span data-l="zh">聯絡方式</span></h4>
+        <p class="mono">A0301@mail.ntou.edu.tw</p>
+        <p class="mono">+886-2-2462-2192 <span data-l="en">ext.</span><span data-l="zh">分機</span> 6154 / 6167</p>
+      </div>
+      <div>
+        <h4><span data-l="en">Links</span><span data-l="zh">相關連結</span></h4>
+        <p><a href="https://hreweb.ntou.edu.tw/" target="_blank" rel="noopener"><span data-l="en">Dept. of Harbor and River Engineering</span><span data-l="zh">河海工程學系</span></a></p>
+        <p><a href="https://www.ntou.edu.tw/" target="_blank" rel="noopener"><span data-l="en">National Taiwan Ocean University</span><span data-l="zh">國立臺灣海洋大學</span></a></p>
+        <p><a href="https://www.google.com/maps/search/?api=1&amp;query=National+Taiwan+Ocean+University+Harbor+and+River+Engineering" target="_blank" rel="noopener"><span data-l="en">Map to campus</span><span data-l="zh">校園地圖</span></a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Coastal Engineering &amp; Resilience Lab, NTOU</span>
+      <span><span data-l="en">Last updated: September 2026</span><span data-l="zh">最後更新：2026 年 9 月</span></span>
+    </div>
+  </div>
+</footer>
+
+<script src="sites.js"></script>
+<script src="projects.js"></script>
+<script src="publications.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
